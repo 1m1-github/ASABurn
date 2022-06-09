@@ -35,7 +35,14 @@ After step 3, your tokens are burned
 You can show your community that the tokens are in the AlgoBurn burn, thereby proving that they are burned.
 
 
+
+
 ## Proof
 Since the code is quite simple, we will prove here that it does exactly as intended. This is in lieu of using expensive verification services that have historically still left bugs open, despite charging fully for their "proof".
 
 
+
+## Parameters
+AlgoBurn account:
+AlgoBurn app id:
+creator account: BURN3MK23BN3DDV2JVYBL7VYIPBUFCKXQWK5W5ECG5FJMG2QNSGODQBGI4 (will eventually be controlled by DAO)
