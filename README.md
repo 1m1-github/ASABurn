@@ -43,6 +43,12 @@ Since the code is quite simple, we will prove here that it does exactly as inten
 
 
 ## Parameters
-AlgoBurn account:
-AlgoBurn app id:
+testnet
+AlgoBurn account: VHYB7V4XFGGPRZ7ECK7VCX25HIOKBIX774CLXXZNOPKGAWV6ONVDBVS55A
+AlgoBurn app id: 94624777
+creator account: BURN3MK23BN3DDV2JVYBL7VYIPBUFCKXQWK5W5ECG5FJMG2QNSGODQBGI4 (will eventually be controlled by DAO)
+
+mainnet
+AlgoBurn account: 
+AlgoBurn app id: 
 creator account: BURN3MK23BN3DDV2JVYBL7VYIPBUFCKXQWK5W5ECG5FJMG2QNSGODQBGI4 (will eventually be controlled by DAO)
