@@ -1,0 +1,216 @@
+{
+  "accounts": [
+    {
+      "address": "NVVMVMEFGTLIVW3YL6R7ADZAWU66HUBNHI6OH264U5YKVZVPG67EMB5EWM",
+      "amount": 7916559,
+      "amount-without-pending-rewards": 7916559,
+      "apps-local-state": [
+        {
+          "id": 92065044,
+          "schema": {
+            "num-byte-slice": 0,
+            "num-uint": 0
+          }
+        },
+        {
+          "id": 94286466,
+          "schema": {
+            "num-byte-slice": 0,
+            "num-uint": 0
+          }
+        },
+        {
+          "id": 94294295,
+          "schema": {
+            "num-byte-slice": 0,
+            "num-uint": 0
+          }
+        },
+        {
+          "id": 94296784,
+          "schema": {
+            "num-byte-slice": 0,
+            "num-uint": 0
+          }
+        },
+        {
+          "id": 94624777,
+          "schema": {
+            "num-byte-slice": 0,
+            "num-uint": 0
+          }
+        }
+      ],
+      "assets": [
+        {
+          "amount": 0,
+          "asset-id": 91697272,
+          "is-frozen": false
+        },
+        {
+          "amount": 3,
+          "asset-id": 94294366,
+          "is-frozen": false
+        },
+        {
+          "amount": 14,
+          "asset-id": 94296871,
+          "is-frozen": false
+        },
+        {
+          "amount": 977,
+          "asset-id": 94626436,
+          "is-frozen": false
+        },
+        {
+          "amount": 1000,
+          "asset-id": 94627944,
+          "is-frozen": false
+        },
+        {
+          "amount": 770,
+          "asset-id": 94659440,
+          "is-frozen": false
+        }
+      ],
+      "created-assets": [
+        {
+          "index": 94626436,
+          "params": {
+            "clawback": "NVVMVMEFGTLIVW3YL6R7ADZAWU66HUBNHI6OH264U5YKVZVPG67EMB5EWM",
+            "creator": "NVVMVMEFGTLIVW3YL6R7ADZAWU66HUBNHI6OH264U5YKVZVPG67EMB5EWM",
+            "decimals": 0,
+            "freeze": "NVVMVMEFGTLIVW3YL6R7ADZAWU66HUBNHI6OH264U5YKVZVPG67EMB5EWM",
+            "manager": "NVVMVMEFGTLIVW3YL6R7ADZAWU66HUBNHI6OH264U5YKVZVPG67EMB5EWM",
+            "reserve": "NVVMVMEFGTLIVW3YL6R7ADZAWU66HUBNHI6OH264U5YKVZVPG67EMB5EWM",
+            "total": 1000,
+            "unit-name": "NOVALUE",
+            "unit-name-b64": "Tk9WQUxVRQ=="
+          }
+        },
+        {
+          "index": 94627944,
+          "params": {
+            "clawback": "NVVMVMEFGTLIVW3YL6R7ADZAWU66HUBNHI6OH264U5YKVZVPG67EMB5EWM",
+            "creator": "NVVMVMEFGTLIVW3YL6R7ADZAWU66HUBNHI6OH264U5YKVZVPG67EMB5EWM",
+            "decimals": 0,
+            "freeze": "NVVMVMEFGTLIVW3YL6R7ADZAWU66HUBNHI6OH264U5YKVZVPG67EMB5EWM",
+            "manager": "NVVMVMEFGTLIVW3YL6R7ADZAWU66HUBNHI6OH264U5YKVZVPG67EMB5EWM",
+            "reserve": "NVVMVMEFGTLIVW3YL6R7ADZAWU66HUBNHI6OH264U5YKVZVPG67EMB5EWM",
+            "total": 1000,
+            "unit-name": "NOVALUE",
+            "unit-name-b64": "Tk9WQUxVRQ=="
+          }
+        },
+        {
+          "index": 94659440,
+          "params": {
+            "clawback": "NVVMVMEFGTLIVW3YL6R7ADZAWU66HUBNHI6OH264U5YKVZVPG67EMB5EWM",
+            "creator": "NVVMVMEFGTLIVW3YL6R7ADZAWU66HUBNHI6OH264U5YKVZVPG67EMB5EWM",
+            "decimals": 0,
+            "freeze": "NVVMVMEFGTLIVW3YL6R7ADZAWU66HUBNHI6OH264U5YKVZVPG67EMB5EWM",
+            "manager": "NVVMVMEFGTLIVW3YL6R7ADZAWU66HUBNHI6OH264U5YKVZVPG67EMB5EWM",
+            "reserve": "NVVMVMEFGTLIVW3YL6R7ADZAWU66HUBNHI6OH264U5YKVZVPG67EMB5EWM",
+            "total": 1000,
+            "unit-name": "NOVALUE",
+            "unit-name-b64": "Tk9WQUxVRQ=="
+          }
+        }
+      ],
+      "min-balance": 1200000,
+      "pending-rewards": 0,
+      "reward-base": 27521,
+      "rewards": 0,
+      "round": 22121757,
+      "status": "Offline",
+      "total-apps-opted-in": 5,
+      "total-assets-opted-in": 6,
+      "total-created-apps": 0,
+      "total-created-assets": 3
+    },
+    {
+      "address": "VHYB7V4XFGGPRZ7ECK7VCX25HIOKBIX774CLXXZNOPKGAWV6ONVDBVS55A",
+      "amount": 1299000,
+      "amount-without-pending-rewards": 1299000,
+      "assets": [
+        {
+          "amount": 23,
+          "asset-id": 94626436,
+          "is-frozen": false
+        },
+        {
+          "amount": 0,
+          "asset-id": 94627944,
+          "is-frozen": false
+        },
+        {
+          "amount": 230,
+          "asset-id": 94659440,
+          "is-frozen": false
+        }
+      ],
+      "min-balance": 400000,
+      "pending-rewards": 0,
+      "reward-base": 27521,
+      "rewards": 0,
+      "round": 22121757,
+      "status": "Offline",
+      "total-apps-opted-in": 0,
+      "total-assets-opted-in": 3,
+      "total-created-apps": 0,
+      "total-created-assets": 0
+    }
+  ],
+  "apps": [
+    {
+      "id": 94624777,
+      "params": {
+        "approval-program": "BiADAAEEMRkiEkAAITEZIxJAAHAxGYECEkAAaDEZJBJAAGExGYEFEkAAWUIAVDYaAIAFb3B0aW4SQAAUNhoAgAh3aXRoZHJhdxJAABdCADKxMgqyFCKyEiSyEDYwALIRs0IAIDIJMQASRLEyCbIHMgpgMgp4CTIACbIII7IQs0IAAiJDI0M=",
+        "clear-state-program": "BoEB",
+        "creator": "BURN3MK23BN3DDV2JVYBL7VYIPBUFCKXQWK5W5ECG5FJMG2QNSGODQBGI4"
+      }
+    }
+  ],
+  "latest-timestamp": 1654817934,
+  "protocol-version": "https://github.com/algorandfoundation/specs/tree/d5ac876d7ede07367dbaa26e149aa42589aac1f7",
+  "round": 22121757,
+  "sources": null,
+  "txns": [
+    {
+  "sig": "2gnpMRo4wvZOQPfKT9rHqDghVSKj+LfJfqTZM5X8D6paAbk18VHwOkISTSCBw+j0Ozz8Fy1NZ33IUDdogZVzBA==",
+  "txn": {
+    "amt": 1000000,
+    "fee": 1000,
+    "fv": 22121757,
+    "gen": "testnet-v1.0",
+    "gh": "SGO1GKSzyE7IEPItTxCByw9x8FmnrCDexi9/cOUJOiI=",
+    "grp": "Bb71DBhuGNZY+hpfIeKhr2v2UyRAKtdxRUjmi1HGG2U=",
+    "lv": 22122757,
+    "note": "fqt8PHJLIkg=",
+    "rcv": "VHYB7V4XFGGPRZ7ECK7VCX25HIOKBIX774CLXXZNOPKGAWV6ONVDBVS55A",
+    "snd": "NVVMVMEFGTLIVW3YL6R7ADZAWU66HUBNHI6OH264U5YKVZVPG67EMB5EWM",
+    "type": "pay"
+  }
+},
+    {
+  "sig": "A/td/UC679QFcvW29DmMVKx6A+an3gVaoPRBLyzBSucJ7FbJk9T63R2ijZHX3TylFqleit0ul9TRCilYjdIqDg==",
+  "txn": {
+    "apaa": [
+      "b3B0aW4="
+    ],
+    "apas": [
+      94659440
+    ],
+    "apid": 94624777,
+    "fee": 1000,
+    "fv": 22121757,
+    "gh": "SGO1GKSzyE7IEPItTxCByw9x8FmnrCDexi9/cOUJOiI=",
+    "grp": "Bb71DBhuGNZY+hpfIeKhr2v2UyRAKtdxRUjmi1HGG2U=",
+    "lv": 22122757,
+    "note": "XTF5QG+QRZ8=",
+    "snd": "NVVMVMEFGTLIVW3YL6R7ADZAWU66HUBNHI6OH264U5YKVZVPG67EMB5EWM",
+    "type": "appl"
+  }
+}
+  ]
+}

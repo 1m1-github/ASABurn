@@ -1,0 +1,141 @@
+// AlgoBurn
+// cannot update or delete SYSTEM
+// cannot withdraw ASA
+// creator can withdraw ALGO
+// user can let SYSTEM opt-into any ASA - cost 1 ALGO
+
+#pragma version 6
+
+////////////////
+// boilerplate to handle cases
+txn OnCompletion
+int NoOp
+==
+bnz handle_noop
+
+txn OnCompletion
+int OptIn
+==
+bnz approve
+
+txn OnCompletion
+int CloseOut
+==
+bnz approve
+
+txn OnCompletion
+int UpdateApplication
+==
+bnz decline
+
+txn OnCompletion
+int DeleteApplication
+==
+bnz decline
+
+// Unexpected OnCompletion value. Should be unreachable.
+b decline
+////////////////
+
+
+////////////////
+// 2 cases: init, buy
+handle_noop:
+
+txna ApplicationArgs 0
+byte "optin"
+==
+bnz handle_optin
+
+txna ApplicationArgs 0
+byte "withdraw"
+==
+bnz handle_withdraw
+
+// Unexpected first arg
+b decline
+////////////////
+
+
+///////////////
+handle_optin:
+
+// need 2 txns
+global GroupSize
+int 2
+==
+// 1st txn is ALGO pay
+gtxn 0 TypeEnum
+int pay
+==
+// 1st txn amount is 1 ALGO
+gtxn 0 Amount
+int 1000000
+==
+// 2nd txn if app call
+txn GroupIndex
+int 1
+==
+&&
+&&
+&&
+assert
+
+// opt-in txn
+itxn_begin
+global CurrentApplicationAddress
+itxn_field AssetReceiver
+int 0
+itxn_field AssetAmount
+int axfer
+itxn_field TypeEnum
+txna Assets 0
+itxn_field XferAsset
+itxn_submit
+
+b approve
+///////////////
+
+
+///////////////
+// send all ALGOs to the Creator
+handle_withdraw:
+
+// only creator can run
+global CreatorAddress
+txn Sender
+==
+assert
+
+// send ALGO txn
+itxn_begin
+// send to Creator
+global CreatorAddress
+itxn_field Receiver
+// amount = balance - min_balance - txn fee
+global CurrentApplicationAddress
+balance
+global CurrentApplicationAddress
+min_balance
+-
+global MinTxnFee
+-
+itxn_field Amount
+int pay
+itxn_field TypeEnum
+itxn_submit
+
+b approve
+///////////////
+
+
+////////////////
+// end branches
+decline:
+int 0
+return
+
+approve:
+int 1
+return
+////////////////

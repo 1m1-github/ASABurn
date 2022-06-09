@@ -1,0 +1,47 @@
+// https://developer.algorand.org/docs/run-a-node/setup/install/#sync-node-network-using-fast-catchup
+// chrome://inspect/#devices
+
+// set env vars for terminal
+export ALGORAND_DATA="$HOME/node/testnetdata"
+export WALLET=2i2i
+export CODE_DIR=./code
+export TXNS_DIR=./txns
+export SYSTEM_APPROVAL_FILE=$CODE_DIR/state_approval_program.teal
+export SYSTEM_CLEAR_FILE=$CODE_DIR/state_clear_program.teal
+export CREATOR=BURN3MK23BN3DDV2JVYBL7VYIPBUFCKXQWK5W5ECG5FJMG2QNSGODQBGI4
+export USER=NVVMVMEFGTLIVW3YL6R7ADZAWU66HUBNHI6OH264U5YKVZVPG67EMB5EWM
+
+// create SYSTEM
+goal app create --creator $CREATOR --approval-prog $SYSTEM_APPROVAL_FILE --clear-prog $SYSTEM_CLEAR_FILE --global-byteslices 0 --global-ints 0 --local-byteslices 0 --local-ints 0 --on-completion OptIn
+export SYSTEM_ID=94624777
+goal app info --app-id $SYSTEM_ID
+export SYSTEM_ACCOUNT=VHYB7V4XFGGPRZ7ECK7VCX25HIOKBIX774CLXXZNOPKGAWV6ONVDBVS55A
+goal account info -a $SYSTEM_ACCOUNT
+
+// create asset
+goal asset create --creator $USER --total 1000 --unitname NOVALUE --decimals 0 -w $WALLET
+export ASA=94659440
+
+// user opt-into SYSTEM
+goal app optin --app-id $SYSTEM_ID --from $USER -w $WALLET
+
+// opt-in SYSTEM into ASA
+goal clerk send --from=$USER --to=$SYSTEM_ACCOUNT --amount=1000000 --out=$TXNS_DIR/optin_send.stxn -w $WALLET
+goal app call --from=$USER --app-id=$SYSTEM_ID --foreign-asset $ASA --app-arg="str:optin" --out=$TXNS_DIR/optin_call.stxn -w $WALLET
+cat $TXNS_DIR/optin_send.stxn $TXNS_DIR/optin_call.stxn > $TXNS_DIR/combinedtransactions.txn
+goal clerk group --infile $TXNS_DIR/combinedtransactions.txn --outfile $TXNS_DIR/groupedtransactions.txn
+goal clerk sign --infile $TXNS_DIR/groupedtransactions.txn --outfile $TXNS_DIR/optin.stxn -w $WALLET
+goal clerk rawsend --filename $TXNS_DIR/optin.stxn
+
+// burn
+goal asset send --assetid=$ASA --from=$USER --to=$SYSTEM_ACCOUNT --amount=23 -w $WALLET
+
+// withdraw
+goal app call --from=$CREATOR --app-id=$SYSTEM_ID --foreign-asset $ASA --app-arg="str:withdraw"
+
+// debug
+goal clerk dryrun -t $TXNS_DIR/optin.stxn --dryrun-dump -o $TXNS_DIR/dryrun.json
+tealdbg debug $SYSTEM_APPROVAL_FILE -d $TXNS_DIR/dryrun.json --group-index 1
+
+// update - disabled in prod
+goal app update --app-id=$SYSTEM_ID --from=$CREATOR --approval-prog $SYSTEM_APPROVAL_FILE --clear-prog $SYSTEM_CLEAR_FILE
