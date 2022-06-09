@@ -1,26 +1,41 @@
 # AlgoBurn
-A Smart Contract to burn any ASA
+## A Smart Contract to burn any ASA
 
-This Smart Contract (SC) can be used to **provably** burn any token on Algorand.
+AlgoBurn can be used to **provably** burn any token on Algorand.
 
-The SC will opt-into the ASA of your choice and keep the tokens forever.
-No one, not the SC creator, nor the SC itself, can ever use the tokens or send them anywhere. They are locked forever in the SC account. Unless the ASA has a clawback account, in which case the clawback account can of course always clawback the tokens anytime.
+No one, not the AlgoBurn creator, nor AlgoBurn itself, not the ASA creator can ever retrieve/send/use the tokens. They are locked forever in the AlgoBurn account. Since the AlgoBurn code cannot be updated by anyone either, the lock is forever and guaranteed.
+Unless the ASA has clawback enabled, in which case the clawback account can of course always clawback the tokens anytime. The ASA manager account could set the clawback account to the AlgoBurn account or set it to null, thereby guaranteeing the burning of their tokens.
 
-The SC code is simple and can be verified easily.
+The AlgoBurn code is simple and can be verified easily (see below).
 
-The SC creator can withdraw ALGOs from the SC account. These should be the fees paid to AlgoBurn. The fees will be withdrawn periodically, but not after each burn, to minimise costs for users.
-If a user tries to burn ALGOs, these ALGOs will effectively become donations to AlgoBurn. AlgoBurn is intended as a burn address for ASAs, not ALGO.
+AlgoBurn is intended as a burn address for ASAs, not ALGO.
+The AlgoBurn creator can withdraw ALGOs from the AlgoBurn account. These should be the fees paid to AlgoBurn.
+If a user tries to burn ALGOs, these ALGOs will effectively become donations to AlgoBurn.
 
-Max cost: 0.105 ALGO
-- 0.101 for the SC to opt-into the ASA (only needed once ever)
-- 0.001 for the user to opt-into the SC (only needed once ever)
-- 0.001 to run the SC
-- 0.001 to send your tokens to the SC account
-- 0.001 fee for AlgoBurn
+AlgoBurn will eventually become a DAO (assuming AlgoBurn is used by the community) and the DAO token holders will decide when to withdraw the fees earned and what to do with them.
 
-Min cost: 0.003 ALGO
-- 0.001 to run the SC
-- 0.001 to send your tokens to the SC account
-- 0.001 fee for AlgoBurn
+## How to use
 
-AlgoBurn will be a DAO. DAO token holders will have full access to all the fees earned by AlgoBurn.
+Step 1
+As usual, your account has to first opt-into AlgoBurn
+Cost: 0.001 ALGO
+
+Step 2
+This step is only needed if AlgoBurn has never opted-into the ASA of interest:
+
+Cost 1 ALGO
+
+Step 3
+Send ASA tokens to AlgoBurn
+Cost 0.001 ALGO
+
+Done
+After step 3, your tokens are burned
+
+You can show your community that the tokens are in the AlgoBurn burn, thereby proving that they are burned.
+
+
+## Proof
+Since the code is quite simple, we will prove here that it does exactly as intended. This is in lieu of using expensive verification services that have historically still left bugs open, despite charging fully for their "proof".
+
+
