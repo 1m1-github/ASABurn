@@ -18,7 +18,7 @@ ASABurn will eventually become a DAO (assuming ASABurn is used by the community)
 
 **The execution below requires some technical expertise. I have an idea how to easily offer this as a GUI. Coming soonish.**
 
-Step 1  
+Step 1 (optional - only needed if ASABurn is not opted into your ASA yet)
 As usual, your account has to first opt-into ASABurn
 ```
 // testnet
@@ -28,8 +28,7 @@ goal app optin --app-id $SYSTEM_ID --from $USER
 ```
 Note that step 1 is a simple smart contract opt-in - you can do this from any wallet
 
-Step 2  
-This step is only needed if ASABurn has never opted-into the ASA of interest:
+Step 2 (optional - only needed if ASABurn is not opted into your ASA yet)
 ```
 // testnet
 export USER=your account
