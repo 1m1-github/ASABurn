@@ -1,9 +1,9 @@
 # ASABurn
-## A burn address for any ASA for Algorand
+## A burn address for any ASA on Algorand
 
 ### Easy to use
-Just send your ASA tokens to
-testnet: IWWAGEIEFLD4PNZWB2CYPBDM27QSKXMWBQQQUJHVLCDXE6JMA3GXJQHV7E
+Just send your ASA tokens to  
+testnet: IWWAGEIEFLD4PNZWB2CYPBDM27QSKXMWBQQQUJHVLCDXE6JMA3GXJQHV7E  
 mainnet: *not deployed yet*
 
 ASABurn is a smart contract that keeps all tokens locked forever. The smart contract can also never be changed.
@@ -11,17 +11,7 @@ ASABurn is a smart contract that keeps all tokens locked forever. The smart cont
 ### Opt ASABurn into ASA
 ASABurn needs to opt-into each ASA once before tokens can be burned.
 
-First, opt-into the smart contract.
-```
-export USER=your account
-// testnet
-export SYSTEM_ID=95487107
-// mainnet
-export SYSTEM_ID= *not deployed yet*
-goal app optin --app-id $SYSTEM_ID --from $USER
-```
-
-Second, send 1 ALGO to ASABurn and run ASABurn with param 'optin'.
+Step 0, env vars
 ```
 export USER=your account
 export ASA=your ASA id
@@ -31,6 +21,15 @@ export SYSTEM_ACCOUNT=IWWAGEIEFLD4PNZWB2CYPBDM27QSKXMWBQQQUJHVLCDXE6JMA3GXJQHV7E
 // mainnet
 export SYSTEM_ID= *not deployed yet*
 export SYSTEM_ACCOUNT= *not deployed yet*
+```
+
+Step 1, opt-into the smart contract.
+```
+goal app optin --app-id $SYSTEM_ID --from $USER
+```
+
+Step 2, send 1 ALGO to ASABurn and run ASABurn with param 'optin'.
+```
 goal clerk send --from=$USER --to=$SYSTEM_ACCOUNT --amount=1000000 --out=optin_send.stxn
 goal app call --from=$USER --app-id=$SYSTEM_ID --foreign-asset $ASA --app-arg="str:optin" --out=optin_call.stxn
 cat optin_send.stxn optin_call.stxn > combinedtransactions.txn
