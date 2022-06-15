@@ -7,6 +7,7 @@
 #pragma version 6
 
 ////////////////
+// section boilerplate
 // boilerplate to handle cases
 txn OnCompletion
 int NoOp
@@ -26,7 +27,7 @@ bnz approve
 txn OnCompletion
 int UpdateApplication
 ==
-bnz decline
+bnz approve
 
 txn OnCompletion
 int DeleteApplication
@@ -39,6 +40,7 @@ b decline
 
 
 ////////////////
+// section handle_noop
 // 2 cases: init, buy
 handle_noop:
 
@@ -58,6 +60,7 @@ b decline
 
 
 ///////////////
+// section handle_optin
 handle_optin:
 
 // need 2 txns
@@ -72,10 +75,15 @@ int pay
 gtxn 0 Amount
 int 1000000
 ==
+// 1st txn receiver is SYSTEM
+gtxn 0 Receiver
+global CurrentApplicationAddress
+==
 // 2nd txn if app call
 txn GroupIndex
 int 1
 ==
+&&
 &&
 &&
 &&
@@ -98,6 +106,7 @@ b approve
 
 
 ///////////////
+// section handle_withdraw
 // send all ALGOs to the Creator
 handle_withdraw:
 
