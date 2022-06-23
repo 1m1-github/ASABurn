@@ -1,4 +1,7 @@
 # ASABurn
+
+### Note: Instead of using ASABurn, you can also sends the tokens to any address and re-key that to Zero-D (DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDPAJIW7Y) [https://twitter.com/d13_co/status/1536045524989657088?s=20&t=2p2JYYpUWfGJlUq8czzfSA].
+
 ## A burn address for any ASA on Algorand
 
 ### Easy to use
